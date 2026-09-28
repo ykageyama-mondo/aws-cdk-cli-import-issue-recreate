@@ -4,6 +4,9 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   name: 'aws-cdk-recreate',
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
+  deps: [
+    'dotenv',
+  ],
 
   // defaultReleaseBranch: "main",  /* The name of the main release branch. */
   // deps: [],                      /* Runtime dependencies of this module. */
@@ -11,4 +14,10 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   // devDeps: [],                   /* Build dependencies for this module. */
   // packageName: undefined,        /* The "name" in package.json. */
 });
+
+project.addTask('cdk:import', {
+  exec: 'cdk import',
+});
+project.gitignore.addPatterns('.env');
+
 project.synth();

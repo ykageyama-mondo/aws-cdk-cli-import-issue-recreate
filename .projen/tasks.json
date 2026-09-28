@@ -32,6 +32,14 @@
       "name": "bundle",
       "description": "Prepare assets"
     },
+    "cdk:import": {
+      "name": "cdk:import",
+      "steps": [
+        {
+          "exec": "cdk import"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -280,7 +288,7 @@
             "--peer",
             "--no-deprecated",
             "--dep=dev,prod,peer,optional",
-            "--filter=@types/jest,@types/node,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript"
+            "--filter=@types/jest,@types/node,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript,dotenv"
           ]
         },
         {
@@ -307,7 +315,8 @@
             "ts-node",
             "typescript",
             "aws-cdk-lib",
-            "constructs"
+            "constructs",
+            "dotenv"
           ]
         },
         {

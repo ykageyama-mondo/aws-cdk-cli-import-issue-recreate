@@ -3,6 +3,7 @@
   "scripts": {
     "build": "projen build",
     "bundle": "projen bundle",
+    "cdk:import": "projen cdk:import",
     "clobber": "projen clobber",
     "compile": "projen compile",
     "default": "projen default",
@@ -43,7 +44,8 @@
   },
   "dependencies": {
     "aws-cdk-lib": "^2.189.1",
-    "constructs": "^10.5.1"
+    "constructs": "^10.5.1",
+    "dotenv": "^18.0.4"
   },
   "devEngines": {
     "packageManager": {
